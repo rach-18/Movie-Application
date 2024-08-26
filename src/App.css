@@ -1,0 +1,153 @@
+.transition {
+    transition: all 200ms;
+}
+
+.icon:hover {
+    color: #da2f68;
+}
+
+.gradient-bg {
+    background: linear-gradient(98.37deg, #f89e00 .99%, #da2f68 100%);
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+.search, .description {
+    /* background-image: url("https://image.tmdb.org/t/p/original/qrnt6q3yzK7k9dN7IjLOkI6rZ6O.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+.layer {
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.6) 0%,   /* Transparent black at the top */
+        rgba(0, 0, 0, 0.6) 50%,  /* Transparent black in the middle */
+        #04152D 100%           /* Solid #04152D color at the bottom */
+    );
+    z-index: -1;
+}
+
+.thumb-layer {
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.movie, .infinite {
+    min-width: 50px;
+    max-width: calc(20% - 16px);
+    flex-shrink: 0;
+}
+
+.movie-poster , .official-videos, .cast-photo, .show-poster {
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail {
+    min-width: 50px;
+    max-width: calc(24% - 16px);
+    flex-shrink: 0;
+}
+
+.movies-wrapper::-webkit-scrollbar {
+    height: 6px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+
+.movies-wrapper::-webkit-scrollbar-thumb {
+    background-color: #F59409;
+    border-radius: 5px;
+}
+
+.cast::-webkit-scrollbar {
+    height: 6px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+
+.cast::-webkit-scrollbar-thumb {
+    background-color: #F59409;
+    border-radius: 5px;
+}
+
+.videos::-webkit-scrollbar {
+    height: 6px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+
+.videos::-webkit-scrollbar-thumb {
+    background-color: #F59409;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .movie, .infinite {
+        min-width: 50px;
+        max-width: calc(25% - 16px);
+        flex-shrink: 0;
+    }
+
+    .thumbnail {
+        min-width: 50px;
+        max-width: calc(32% - 16px);
+        flex-shrink: 0;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .infinite {
+        min-width: 50px;
+        max-width: calc(50% - 16px);
+        flex-shrink: 0;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .movie {
+        min-width: 50px;
+        max-width: calc(33% - 16px);
+        flex-shrink: 0;
+    }
+
+    .thumbnail {
+        min-width: 50px;
+        max-width: calc(50% - 16px);
+        flex-shrink: 0;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .movie {
+        min-width: 50px;
+        max-width: calc(38% - 16px);
+        flex-shrink: 0;
+    }
+
+    .thumbnail {
+        min-width: 50px;
+        max-width: calc(55% - 16px);
+        flex-shrink: 0;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .movie {
+        min-width: 50px;
+        max-width: calc(42% - 16px);
+        flex-shrink: 0;
+    }
+
+    .thumbnail {
+        min-width: 50px;
+        max-width: calc(65% - 16px);
+        flex-shrink: 0;
+    }
+}
