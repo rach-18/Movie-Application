@@ -46,7 +46,7 @@ function Movies() {
     }, [movieHasMore, movieLoading, currentPage, dispatch]);
 
     // console.log("Movie List:", movieList);
-    console.log("Movie Genre:", movieGenre);
+    // console.log("Movie Genre:", movieGenre);
 
     return (
         <div className="xl:w-5/6 w-[90%] mx-auto mt-24 mb-10">

@@ -36,7 +36,7 @@ function MoviesDisplay({ heading, option1, option2, choice1, choice2 }) {
                         {
                             visible ? 
                             (option1.map((movie, index) => (
-                                <MovieDisplay key={index} movie={movie} category='scroll' />
+                                <MovieDisplay key={index} movie={movie} />
                             ))) :
                             (option2.map((movie, index) => (
                                 <MovieDisplay key={index} movie={movie} />

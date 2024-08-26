@@ -41,10 +41,10 @@ function SearchResults() {
         return state.movieReducer;
     });
 
-    console.log(searchResults);
+    // console.log(searchResults);
 
     return (
-        <div className="w-5/6 mx-auto my-10">
+        <div className="w-5/6 mx-auto mt-20 mb-10">
             <p className="text-2xl mb-5">Search results for '{searchTerm}'</p>
             {
                 searchResults ? 

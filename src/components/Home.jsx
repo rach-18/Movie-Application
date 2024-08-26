@@ -27,7 +27,7 @@ function Home() {
     }, [dispatch]);
 
     // console.log(trendingMoviesByDay, trendingMoviesByWeek, popularMovies, popularTVShows, topRatedMovies, topRatedTVShows);
-    console.log("Check", castArray);
+    // console.log("Check", castArray);
 
     return (
         <>

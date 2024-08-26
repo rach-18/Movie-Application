@@ -26,6 +26,7 @@ function ShowDescription() {
     const {showID} = useParams();
     const dispatch = useDispatch();
     const [selectedVideo, setSelectedVideo] = useState(null);
+    const [trailer, setTrailer] = useState(true);
 
     useEffect(() => {
         dispatch(fetchShowDescription(showID));
@@ -97,7 +98,12 @@ function ShowDescription() {
     }
 
     function openModal(video) {
-        setSelectedVideo(video);
+        if(video) {
+            setSelectedVideo(video);
+        }
+        else {
+            setSelectedVideo({message: 'No trailer available'});
+        }
     }
 
     function closeModal() {
@@ -105,11 +111,12 @@ function ShowDescription() {
     }
 
     function handleWatchTrailerClick() {
-        console.log("Trailer clicked", movieVideos);
-        if (movieVideos && movieVideos.results && movieVideos.results.length > 0) {
-            openModal(movieVideos.results[0]);
+        // console.log("Trailer clicked", showVideos);
+        if (showVideos && showVideos.results && showVideos.results.length > 0) {
+            openModal(showVideos.results[0]);
         } else {
-            console.log("No trailer available");
+            // console.log("No trailer available");
+            openModal(null);
         }
     }
 
@@ -124,8 +131,8 @@ function ShowDescription() {
                     : 'none'
                 }}
             >
-                <div className="layer w-full h-full absolute"></div>
-                <div className="flex md:flex-row flex-col gap-10 xl:w-5/6 w-[95%] mx-auto pt-24 pb-10">
+                {/* <div className="layer w-full h-full absolute"></div> */}
+                <div className="relative z-10 flex md:flex-row flex-col gap-10 xl:w-5/6 w-[95%] mx-auto pt-24 pb-10">
                     {
                         showDescription.poster_path ? 
                         <img
@@ -236,27 +243,27 @@ function ShowDescription() {
                     }
                 </div>
                 {
-                    selectedVideo && 
-                    (
-                        <div className="fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-black bg-opacity-75 z-50">
-                            <button 
-                                onClick={closeModal} 
-                                className="text-4xl xl:w-[50%] lg:w-[60%] sm:w-5/6 w-[95%] text-right font-bold text-white hover:text-red-600"
-                            >
-                                &times;
-                            </button>
-                            <div className="relative bg-[#04152D] sm:p-4 p-2 xl:w-[50%] lg:w-[60%] sm:w-5/6 w-[95%]">
-                                <iframe 
-                                    className="w-full h-56 md:h-96 rounded-xl" 
-                                    src={`https://www.youtube.com/embed/${selectedVideo.key}`} 
+                    selectedVideo && (
+                    <div className="fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-black bg-opacity-75 z-50">
+                        <button className="text-4xl xl:w-[50%] lg:w-[60%] sm:w-5/6 w-[95%] text-right font-bold text-white hover:text-red-600" onClick={closeModal}>
+                            &times;
+                        </button>
+                        <div className="relative bg-[#04152D] sm:p-4 p-2 xl:w-[50%] lg:w-[60%] sm:w-5/6 w-[95%]">
+                            {selectedVideo.key ? (
+                                <iframe
+                                    className="w-full h-56 md:h-96 rounded-xl"
+                                    src={`https://www.youtube.com/embed/${selectedVideo.key}`}
                                     frameBorder="0"
                                     allowFullScreen
-                                    title={selectedVideo.name}
+                                    title="Video Trailer"
                                 ></iframe>
-                            </div>
+                            ) : (
+                                <p>{selectedVideo.message}</p>
+                            )}
                         </div>
-                    )
-                }
+                    </div>
+                )
+            }
             </div>
             <div className="my-10 w-5/6 mx-auto">
                 <p className="text-2xl pb-8">Similar TV Shows</p>
