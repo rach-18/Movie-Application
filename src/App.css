@@ -1,5 +1,9 @@
 .transition {
-    transition: all 200ms;
+    transition: all 300ms;
+}
+
+.click:active {
+    color: #da2f68;
 }
 
 .icon:hover {
@@ -61,6 +65,7 @@ header {
         to bottom, 
         rgba(0, 0, 0, 0.6) 0%,   /* Transparent black at the top */
         rgba(0, 0, 0, 0.6) 50%,  /* Transparent black in the middle */
+        #04152D 90%,
         #04152D 100%           /* Solid #04152D color at the bottom */
     ); /* Adjust the color and opacity as needed */
     z-index: 1;
@@ -85,6 +90,10 @@ header {
     min-width: 50px;
     max-width: calc(24% - 16px);
     flex-shrink: 0;
+}
+
+.thumbnail:hover .play-icon {
+    color: #da2f68;
 }
 
 .movies-wrapper::-webkit-scrollbar {
@@ -118,6 +127,10 @@ header {
 .videos::-webkit-scrollbar-thumb {
     background-color: #F59409;
     border-radius: 5px;
+}
+
+.cast-photo:hover {
+    transform: translateY(-5px);
 }
 
 @media only screen and (max-width: 768px) {

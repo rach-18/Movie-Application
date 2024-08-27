@@ -198,8 +198,8 @@ function ShowDescription() {
                                 <div key={index} className="flex-none flex flex-col items-center">
                                     {
                                         cast.profile_path ? 
-                                        <img className="cast-photo lg:w-[10rem] w-[8rem] lg:h-[10rem] h-[8rem] object-cover rounded-full" src={img_base_path + cast.profile_path} alt="" /> :
-                                        <img className="cast-photo lg:w-[10rem] w-[8rem] lg:h-[10rem] h-[8rem] object-cover rounded-full" src='/no-cast-photo.png' alt="" />
+                                        <img className="cast-photo transition pt-2 lg:w-[10rem] w-[8rem] lg:h-[10rem] h-[8rem] object-cover rounded-full" src={img_base_path + cast.profile_path} alt="" /> :
+                                        <img className="cast-photo transition pt-2 lg:w-[10rem] w-[8rem] lg:h-[10rem] h-[8rem] object-cover rounded-full" src='/no-cast-photo.png' alt="" />
                                     }
                                     <p className="md:text-lg text-sm font-semibold mt-4">{cast.name}</p>
                                     <p className="text-[#757E8B] md:text-base text-sm font-medium">{cast.character}</p>

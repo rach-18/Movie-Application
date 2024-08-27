@@ -39,7 +39,7 @@ function TVShows() {
         };
     }, [showHasMore, showLoading, currentPage, dispatch]);
 
-    c// onsole.log("Show List:", showList);
+    // console.log("Show List:", showList);
 
     return (
         <div className="xl:w-5/6 w-[90%] mx-auto mt-24 mb-10">
